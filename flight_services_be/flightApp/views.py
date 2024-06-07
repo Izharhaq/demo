@@ -7,28 +7,7 @@ from rest_framework import filters
 from rest_framework.response import Response
 from rest_framework import status
 
-# Create your views here.
-###########################################
-###########################################
-# @api_view(['GET','POST'])
-# def reservation_operations(request):
-
-#     if request.method =='POST':
-#         students = Student.objects.filter(departureCity=departureCity,arrivalCity=arrivalCity,dateOfDeparture=dateOfDeparture)
-#         serializer=StudentSerializer(students,many=True)
-#         return Response(serializer.data)
-
-#     elif request.method == 'POST':
-#         serializer = StudentSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data,status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-
-###########################################
-###########################################
-
-# Create your views here.
+# Create your views here. This is function based view
 @api_view(['POST'])
 def find_flights(request):
     flights=Flight.objects.filter(departureCity=request.data['departureCity'], arrivalCity=request.data['arrivalCity'], dateOfDeparture=request.data['dateOfDeparture'])
